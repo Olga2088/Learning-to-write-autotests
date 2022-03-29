@@ -10,8 +10,14 @@ import static com.codeborne.selenide.Selenide.open;
         void selenideSearchTest () {
             // Открыть https://google.com
             open("http://v2portal.gorod.proitr.ru");
-            // Ввести "Selenide" в поле поиска
-            $("[name=q]").setValue("http://v2portal.gorod.proitr.ru").pressEnter();
+            // Ввести "gorod" в поле name
+            $("[name=q]").setValue("gorod");
+            // Ввести "eUrK_2H3#?" в поле password
+            $("[name=q]").setValue("eUrK_2H3#?").pressEnter();
+            // Авторизоваться на портале
+            $("[сообщить о проблеме]").click();
+
+
             // Проверить, что "selenide.org" появилось в результатах поиска
             $("[id=search]").shouldHave(text("selenide.org"));
 
